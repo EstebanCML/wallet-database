@@ -1,5 +1,17 @@
 USE AlkeWallet;
 
+-- tipos de moneda que a usado el usuario
+SELECT DISTINCT u.nombre, m.nombre_moneda
+FROM transacciones t
+JOIN usuarios u ON u.usuario_id IN (t.usuario_remitente_id, t.usuario_receptor_id)
+JOIN monedas m ON t.moneda_id = m.moneda_id
+WHERE u.usuario_id = 2;
+
+-- consulta tabla completa de transacciones
+SELECT t.transaccion_id, remitente.nombre, receptor.nombre, t.importe, t.fecha_transaccion
+FROM transacciones t
+JOIN usuarios remitente ON t.usuario_remitente_id = remitente.usuario_id
+JOIN usuarios receptor ON t.usuario_receptor_id = receptor.usuario_id;
 
 -- Reemplazo usuario_remitente_id y usuario_receptor_id por nombres[De - Para]
 SELECT 
