@@ -9,11 +9,6 @@ INSERT INTO tipos_transacciones (nombre) VALUES
 ('reembolso'),        -- Devolución
 ('pago_servicio');    -- Pagos de servicios (luz, agua)
 
-
-
-
-
-
 INSERT INTO usuarios (nombre, email, password_usuario, saldo) 
 VALUES 
 ('Sistema wallet', 'sistema@wallet.com', 'sistema_pass', 9999999),
